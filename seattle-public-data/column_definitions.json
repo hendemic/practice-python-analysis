@@ -1,0 +1,13 @@
+{
+  "uniqueid": "string",
+  "incident_num": "string",
+  "incident_type": "category",
+  "occured_date_time": "datetime64[ns]",
+  "precinct": "category",
+  "sector": "category",
+  "beat": "category",
+  "officer_id": "string",
+  "subject_id": "string",
+  "subject_race": "category",
+  "subject_gender": "category"
+} 
