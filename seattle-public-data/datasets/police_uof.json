@@ -1,13 +1,49 @@
 {
-  "uniqueid": "string",
-  "incident_num": "string",
-  "incident_type": "category",
-  "occured_date_time": "datetime64[ns]",
-  "precinct": "category",
-  "sector": "category",
-  "beat": "category",
-  "officer_id": "string",
-  "subject_id": "string",
-  "subject_race": "category",
-  "subject_gender": "category"
-} 
+  "api_url": "https://data.seattle.gov/resource/ppi5-g2bj.json",
+  "columns": {
+    "uniqueid": {
+      "dtype": "string",
+      "new_name": "uniqueid"
+    },
+    "incident_num": {
+      "dtype": "string",
+      "new_name": "incident_num"
+    },
+    "incident_type": {
+      "dtype": "category",
+      "new_name": "incident_type"
+    },
+    "occured_date_time": {
+      "dtype": "datetime64[ns]",
+      "new_name": "occurred_date_time"
+    },
+    "precinct": {
+      "dtype": "category",
+      "new_name": "precinct"
+    },
+    "sector": {
+      "dtype": "category",
+      "new_name": "sector"
+    },
+    "beat": {
+      "dtype": "category",
+      "new_name": "beat"
+    },
+    "officer_id": {
+      "dtype": "string",
+      "new_name": "officer_id"
+    },
+    "subject_id": {
+      "dtype": "string",
+      "new_name": "subject_id"
+    },
+    "subject_race": {
+      "dtype": "category",
+      "new_name": "subject_race"
+    },
+    "subject_gender": {
+      "dtype": "category",
+      "new_name": "subject_gender"
+    }
+  }
+}
