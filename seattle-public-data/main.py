@@ -8,17 +8,13 @@ import json
 def main():
     """
     Main function for Seattle public data analysis.
+    Data is imported using DataLoader class, with json denoting appropriate API for data and column types + new names
     """
 
     #Define global variables to allow access in ipython
     global df, fig, ax, column_def
 
     #--- IMPORT & CLEAN DATA ---
-    # Use DataLoader class to:
-    # - import
-    # - clean (per seattle panda extender)
-    # - rename and type columns
-    # - And finally save to dataframe.
     dataset = 'datasets/police_uof.json'
     loader = DataLoader(dataset,20000,'seattle')
     df = loader.load_and_process()
@@ -38,7 +34,6 @@ def main():
         df[df['occurred_date_time'].dt.year == 2024],
         x='precinct')
         .add(so.Bar(), so.Count()))
-
     plot.show()
 
 if __name__ == "__main__":

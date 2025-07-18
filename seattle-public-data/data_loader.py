@@ -51,7 +51,14 @@ class DataLoader:
             raise requests.RequestException(f"Failed to fetch data from API: {e}")
         except ValueError as e:
             raise ValueError(f"Failed to parse JSON response: {e}")
+
     def clean_data(self):
+        """
+        Cleans data using the panda extender data_clean function
+        This was an intentional decision where cleaning data is available via loader logic,
+        but the way a dataset is cleaned is defined in that datasets accessor class.
+        """
+
         if self.df is None:
             raise ValueError("No data loaded. Call load_data() first.")
 
@@ -69,7 +76,7 @@ class DataLoader:
         column_types = {}
 
         # CLAUDE GENERATED CODE NOT UNDERSTOOD---
-        # Filter column_mapping to only include columns that exist in the DataFrame
+        # Comments added by Claude: filter column_mapping to only include columns that exist in the DataFrame
         # Example: if column_mapping = {'occured_date_time': 'occurred_date_time', 'precinct': 'precinct', 'missing_col': 'renamed_col'}
         # and self.df.columns = ['occured_date_time', 'precinct', 'officer_id']
         # then existing_mapping = {'occured_date_time': 'occurred_date_time', 'precinct': 'precinct'}
@@ -102,7 +109,12 @@ class DataLoader:
         print(f"Column types applied to {len(self.df.columns)} columns")
 
     def load_and_process(self) -> pd.DataFrame:
-        """Load data, define columns, and clean in one step."""
+        """
+        Load data, define columns, and clean in one step, outputting the dataframe.
+        The intention is to use this once you've understood the data you're working with and have defined
+        cleaning in the accessor class to allow cleaner code in the analysis file(s)
+        """
+
         self.load_data()
         self.clean_data()
         self.define_columns()

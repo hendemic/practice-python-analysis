@@ -5,6 +5,11 @@ import pandas as pd
 class SeattleAccessor:
     """
     Custom DataFrame accessor for Seattle API data operations.
+
+    Note: The data loader relies on the panda extender class for instructions on data cleaning.
+    Different types of data sets may require different cleaning,
+    so the intention is to define cleaning within the dataframe itself,
+    while preserving the loading logic (that includes cleaning) in the loader
     """
 
     def __init__(self, pandas_obj):
